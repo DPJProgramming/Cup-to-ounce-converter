@@ -1,15 +1,28 @@
-window.onload = function onClick(){
+window.onload = function():void{
     document.getElementById("convert").onclick = main;
+    
 }
 
 function main():void{
 
-    let cups:HTMLInputElement = <HTMLInputElement>document.getElementById("cups");
+    let cupsInput:HTMLInputElement = <HTMLInputElement>document.getElementById("cups");
+    let cups = cupsInput.value;
 
-    let validInput:boolean = valid();
+    let valid:boolean = validInput(cups);
 
-    if(validInput){
-        calculate(cups.value);
+    if(valid){
+        calculate(cups);
     }
+    else{
+        cupsInput.nextElementSibling.innerHTML = "Enter a number";
+    }
+}
 
+function validInput(cups):boolean{
+    if(cups == "" || isNaN(cups)){
+        return false;
+    }
+    else{
+        return true;
+    }
 }
