@@ -31,4 +31,10 @@ function validInput(cups):boolean{
 
 function calculate(cups):void{
     let totalOunces:number = cups * 8;
+    displayResults(totalOunces);
+}
+
+function displayResults(totalOunces):void{
+    let result:HTMLInputElement = <HTMLInputElement>document.getElementById("ounces");
+    result.value = totalOunces.toString(); 
 }

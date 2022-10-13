@@ -24,4 +24,9 @@ function validInput(cups) {
 }
 function calculate(cups) {
     var totalOunces = cups * 8;
+    displayResults(totalOunces);
+}
+function displayResults(totalOunces) {
+    var result = document.getElementById("ounces");
+    result.value = totalOunces.toString();
 }
