@@ -6,6 +6,8 @@ function main() {
     var cups = cupsInput.value;
     var valid = validInput(cups);
     if (valid) {
+        var cupsSpan = cupsInput.nextElementSibling;
+        cupsSpan.innerHTML = "*";
         calculate(cups);
     }
     else {
@@ -19,4 +21,7 @@ function validInput(cups) {
     else {
         return true;
     }
+}
+function calculate(cups) {
+    var totalOunces = cups * 8;
 }

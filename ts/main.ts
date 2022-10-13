@@ -6,11 +6,13 @@ window.onload = function():void{
 function main():void{
 
     let cupsInput:HTMLInputElement = <HTMLInputElement>document.getElementById("cups");
-    let cups = cupsInput.value;
+    let cups:string = cupsInput.value;
 
     let valid:boolean = validInput(cups);
 
     if(valid){
+        let cupsSpan = cupsInput.nextElementSibling;
+        cupsSpan.innerHTML = "*"; 
         calculate(cups);
     }
     else{
@@ -25,4 +27,8 @@ function validInput(cups):boolean{
     else{
         return true;
     }
+}
+
+function calculate(cups):void{
+    let totalOunces:number = cups * 8;
 }
