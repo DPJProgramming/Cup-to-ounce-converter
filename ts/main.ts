@@ -4,4 +4,12 @@ window.onload = function onClick(){
 
 function main():void{
 
+    let cups:HTMLInputElement = <HTMLInputElement>document.getElementById("cups");
+
+    let validInput:boolean = valid();
+
+    if(validInput){
+        calculate(cups.value);
+    }
+
 }
